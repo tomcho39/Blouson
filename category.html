@@ -1,0 +1,426 @@
+<!DOCTYPE html>
+<html lang="kr">
+
+<head>
+    <meta charset="UTF-8">
+    <title>동적 클래스</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css?family=Nanum+Gothic|Noto+Sans+KR|Public+Sans&display=swap');
+        
+        body {
+         color: #818181;   
+         font-family: "Noto Sans KR", Helvetica, Arial, sans-serif;
+        }
+
+        a { text-decoration:none;
+            color: #818181;} 
+
+
+        .head_nav {
+            /* background: #0981f1; */
+            text-align: right;
+            align-content: center;
+            height: 60px;
+        }
+        .head_nav li{
+            margin-right: 50px;
+            margin-left: 50px;
+        }
+        
+        .head li {
+            list-style: none;
+            display: inline-block;
+        }
+        
+        .head_cate {
+            text-align: center;
+            align-content: center;
+            /* widows: 100%; */
+            margin: 0px;
+            display: inline;
+        }
+        .cate_list ul {
+            height:50px; 
+            position:relative; 
+            list-style:none;
+        }
+
+        .cate_list li {
+            position:relative;
+            height:100%; 
+            width:16.5%; 
+            float:left;
+        }
+        .cates li{
+            margin-right:50px;
+            margin-left: 50px;
+        }
+
+        
+        .side_cate {
+            color: #818181;
+            height: 200%;
+            width: 250px;
+            top: 160px;
+            left: 0;
+            
+             /* float: left; */
+            overflow-x: hidden;
+            padding-top: 20px;
+            text-align: center;
+            margin: 0;
+            position: absolute;
+            /* background: #111; */
+        }
+        .cate_title {
+            text-align: center;
+            font-size: x-large;
+            color: black;
+        }
+        .contents {
+            padding-bottom:20px;
+            width:100%-250px;
+            height: auto;
+            background-color:white;
+            box-sizing:border-box;
+            padding-bottom:20px;
+            margin-left: 200px;
+            text-align: center;
+        }
+        
+        
+        .content_class{
+            display: inline-block;
+            height:320px;
+            box-sizing:border-box;
+            border:1px solid #ccc;
+            width:300px;
+            background-color:white;
+            margin-bottom:30px;
+            margin-top: 30px;
+            margin-left: auto;
+            margin-right: auto;
+            
+            
+         }
+         .cl_img{
+             border: 1px solid #ccc;
+             height: 200px;
+             width: 280px;
+             display: block;
+             margin-left: auto;
+             margin-right: auto;
+             margin-top: 15px;
+         }
+
+         .cl_img img{
+            height: 200px;
+            width: 280px;
+         }
+         .pr_title{
+             display: inline-block;
+             text-align: left;
+             margin-top: 5px;
+             margin-left: 10px;
+             font-size: x-large;
+             position: relative;
+         }
+         .pr_loca{
+             display: inline-block;
+             font-size: x-small;
+             position: relative;
+         }
+         .pr_price{
+             display: inline-block;
+             display: initial;
+             font-size: xx-large;
+             text-align: left;
+             color: black;
+         }
+         .pr_star{
+             display: inline-block;
+             text-align: right;
+             position: relative;
+         }
+        
+
+    </style>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+</head>
+
+<body>
+    <!-- Navigation -->
+    <div class="head">
+        <div class="head_nav">
+            <ul id="head_ul">
+                <li><a href="#">홈페이지</a></li>
+                <li><a href="#">고객센터</a></li>
+                <li><a href="#">고객센터</a></li>
+        </div>
+        <div class="head_cate">
+            <div class="fixed" id="menu_back_fixed">
+            </div>
+            <div class="main3_cont">
+                <div class="cate_list">
+                    <ul>
+                        <li class="cate" onmouseover="menuView(0)" id="menu0">
+                            <a href="#">
+                                <div id="cate1">동적 액티비티</div>
+                            </a>
+                        </li>
+                        <li class="cate" onmouseover="menuView(1)" id="menu1">
+                            <a href="#">
+                                <div id="cate2">정적 액티비티</div>
+                            </a>
+                        </li>
+    
+                        <li class="cate" onmouseover="menuView(2)" id="menu2">
+                            <a href="#">
+                                <div id="cate3">액티비티</div>
+                            </a>
+                        </li>
+    
+                        <li class="cate" onmouseover="menuView(3)" id="menu3">
+                            <a href="#">
+                                <div id="cate4">쿠킹</div>
+                            </a>
+                        </li>
+    
+                        <li class="cate" onmouseover="menuView(4)" id="menu4">
+                            <a href="#">
+                                <div id="cate5">예술</div>
+                            </a>
+                        </li>
+    
+                        <li class="cate" onmouseover="menuView(5)" id="menu5">
+                            <a href="#">
+                                <div id="cate6">교육</div>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+    
+            </div>
+                <div class="catesub_list cates" id="sub0" style="display:none">
+                    <div class="main">
+                    </div>
+                </div>
+                <div class="catesub_list cates" id="sub1" style="display:none">
+                    <div class="main">
+                    </div>
+                </div>
+                <div class="catesub_list cates" id="sub2" style="display:none">
+                    <div class="main">
+                        <li><a href="#">스포츠</a></li>
+                        <li><a href="#">아웃도어</a></li>
+                    </div>
+                </div>
+                <div class="catesub_list cates" id="sub3" style="display:none">
+                    <div class="main">
+                        <li><a href="#">쿠킹</a></li>
+                        <li><a href="#">베이킹</a></li>
+                    </div>
+                </div>
+                <div class="catesub_list cates" id="sub4" style="display:none">
+                    <div class="main">
+                        <li><a href="#">미술</a></li>
+                        <li><a href="#">음악</a></li>
+                        <li><a href="#">사진</a></li>
+                        <li><a href="#">공예</a></li>
+                    </div>
+                </div>
+                <div class="catesub_list cates" id="sub5" style="display:none">
+                    <div class="main">
+                        <li><a href="#">어학</a></li>
+                        <li><a href="#">IT</a></li>
+                        <li><a href="#">실무</a></li>
+                    </div>
+                </div>
+        </div>
+
+    </div>
+    <!-- menu script -->
+    <script>
+    function menuView(val){
+            $('#menu_back_fixed').show();
+            var va = val;
+            str = '#sub'+val;
+            menu = "#menu"+val;
+        
+            $('.cates').hide();
+            $(str).show();
+        }
+    </script>
+    <!-- side filter -->
+    <div class="side_filter">
+        <div class="side_cate">
+            <div class="cate_title">동적 액티비티</div>
+            <div id="side_check">
+                <br>
+                <label>
+                    <input type="checkbox">강남&nbsp;&nbsp;&nbsp;&nbsp;</label> 
+                <label>
+                    <input type="checkbox">강북</label>
+                <br>
+                <label>
+                    <input type="checkbox">강동&nbsp;&nbsp;&nbsp;&nbsp;</label>
+                <label>
+                    <input type="checkbox">강서</label>
+                <br>
+                <br>
+                <label>
+                    <input type="checkbox">동적&nbsp;&nbsp;&nbsp;&nbsp;</label>
+                <label>
+                    <input type="checkbox">정적</label>
+                <br>
+                <br>
+                <br>
+            </div>
+            
+            <div id="side_range">
+                <table style="font-size: xx-small; " align="center" >
+                    <tr style="text-align: left;"><td>최저금액</td><td></td><td style="text-align: right;"></td></tr>
+                    <tr style="text-align: left;"><td>5,000</td><td></td><td style="text-align: right;">300,000</td></tr>
+                    <tr><td colspan="3"><input type="range" min="5000" max="300000"></td></tr>
+                    <tr style="text-align: left;"><td>최대금액</td><td></td><td style="text-align: right;"></td></tr>
+                    <tr style="text-align: left;"><td>5,000</td><td></td><td style="text-align: right;">300,000</td></tr>
+                    <tr><td colspan="3"><input type="range"  min="5000" max="300000"></td></tr>
+                    <tr><td>&nbsp;</td></tr>
+                    <tr><td colspan="3">
+                        <select style=" width: 100%; text-align: center;">
+                            <option value="">정렬</option>
+                            <option value="st">별점순</option>
+                            <option value="pop">인기순</option>
+                            <option value="pri"></option>
+                        </select></td></tr>
+                    </table>
+                </div>
+                <button>선택</button>
+            </div>
+    </div>
+    <!-- main page -->
+    <div class="contents">
+        <div class="content_class" id="cl_no1">
+            <div class="cl_img">
+                <a href="#상세페이지">
+                    <img src="https://img1.daumcdn.net/thumb/R800x0/?scode=mtistory2&fname=https%3A%2F%2Ft1.daumcdn.net%2Fcfile%2Ftistory%2F24091E5058DBA97F21" alt="">
+                </a>
+            </div>
+            <div class="cl_profile">
+                <div class="pr_title"><a href="http://">우면산 하이킹</a></div>
+                <div class="pr_loca">서울/우면산</div>
+                <div class="pr_price">134,000원</div>
+                <div class="pr_star"><span style="color: #0981f1;">★</span> <span>8.9</span></div>
+            </div>
+        </div>
+        <div class="content_class" id="cl_no2">
+            <div class="cl_img">
+                <a href="#상세페이지">
+                    <img src="https://img1.daumcdn.net/thumb/R800x0/?scode=mtistory2&fname=https%3A%2F%2Ft1.daumcdn.net%2Fcfile%2Ftistory%2F24091E5058DBA97F21" alt="">
+                </a>
+            </div>
+            <div class="cl_profile">
+                <div class="pr_title"><a href="http://">우면산 하이킹</a></div>
+                <div class="pr_loca">서울/우면산</div>
+                <div class="pr_price">134,000원</div>
+                <div class="pr_star"><span style="color: #0981f1;">★</span> <span>8.9</span></div>
+            </div>
+        </div>
+        <div class="content_class" id="cl_no3">
+            <div class="cl_img">
+                <a href="#상세페이지">
+                    <img src="https://img1.daumcdn.net/thumb/R800x0/?scode=mtistory2&fname=https%3A%2F%2Ft1.daumcdn.net%2Fcfile%2Ftistory%2F24091E5058DBA97F21" alt="">
+                </a>
+            </div>
+            <div class="cl_profile">
+                <div class="pr_title"><a href="http://">우면산 하이킹</a></div>
+                <div class="pr_loca">서울/우면산</div>
+                <div class="pr_price">134,000원</div>
+                <div class="pr_star"><span style="color: #0981f1;">★</span> <span>8.9</span></div>
+            </div>
+        </div>
+        <div class="content_class" id="cl_no4">
+            <div class="cl_img">
+                <a href="#상세페이지">
+                    <img src="https://img1.daumcdn.net/thumb/R800x0/?scode=mtistory2&fname=https%3A%2F%2Ft1.daumcdn.net%2Fcfile%2Ftistory%2F24091E5058DBA97F21" alt="">
+                </a>
+            </div>
+            <div class="cl_profile">
+                <div class="pr_title"><a href="http://">우면산 하이킹</a></div>
+                <div class="pr_loca">서울/우면산</div>
+                <div class="pr_price">134,000원</div>
+                <div class="pr_star"><span style="color: #0981f1;">★</span> <span>8.9</span></div>
+            </div>
+        </div>
+        <div class="content_class" id="cl_no5">
+            <div class="cl_img">
+                <a href="#상세페이지">
+                    <img src="https://img1.daumcdn.net/thumb/R800x0/?scode=mtistory2&fname=https%3A%2F%2Ft1.daumcdn.net%2Fcfile%2Ftistory%2F24091E5058DBA97F21" alt="">
+                </a>
+            </div>
+            <div class="cl_profile">
+                <div class="pr_title"><a href="http://">우면산 하이킹</a></div>
+                <div class="pr_loca">서울/우면산</div>
+                <div class="pr_price">134,000원</div>
+                <div class="pr_star"><span style="color: #0981f1;">★</span> <span>8.9</span></div>
+            </div>
+        </div>
+        <div class="content_class" id="cl_no6">
+            <div class="cl_img">
+                <a href="#상세페이지">
+                    <img src="https://img1.daumcdn.net/thumb/R800x0/?scode=mtistory2&fname=https%3A%2F%2Ft1.daumcdn.net%2Fcfile%2Ftistory%2F24091E5058DBA97F21" alt="">
+                </a>
+            </div>
+            <div class="cl_profile">
+                <div class="pr_title"><a href="http://">우면산 하이킹</a></div>
+                <div class="pr_loca">서울/우면산</div>
+                <div class="pr_price">134,000원</div>
+                <div class="pr_star"><span style="color: #0981f1;">★</span> <span>8.9</span></div>
+            </div>
+        </div>
+        <div class="content_class" id="cl_no7">
+            <div class="cl_img">
+                <a href="#상세페이지">
+                    <img src="https://img1.daumcdn.net/thumb/R800x0/?scode=mtistory2&fname=https%3A%2F%2Ft1.daumcdn.net%2Fcfile%2Ftistory%2F24091E5058DBA97F21" alt="">
+                </a>
+            </div>
+            <div class="cl_profile">
+                <div class="pr_title"><a href="http://">우면산 하이킹</a></div>
+                <div class="pr_loca">서울/우면산</div>
+                <div class="pr_price">134,000원</div>
+                <div class="pr_star"><span style="color: #0981f1;">★</span> <span>8.9</span></div>
+            </div>
+        </div>
+        <div class="content_class" id="cl_no8">
+            <div class="cl_img">
+                <a href="#상세페이지">
+                    <img src="https://img1.daumcdn.net/thumb/R800x0/?scode=mtistory2&fname=https%3A%2F%2Ft1.daumcdn.net%2Fcfile%2Ftistory%2F24091E5058DBA97F21" alt="">
+                </a>
+            </div>
+            <div class="cl_profile">
+                <div class="pr_title"><a href="http://">우면산 하이킹</a></div>
+                <div class="pr_loca">서울/우면산</div>
+                <div class="pr_price">134,000원</div>
+                <div class="pr_star"><span style="color: #0981f1;">★</span> <span>8.9</span></div>
+            </div>
+        </div>
+        <div class="content_class" id="cl_no9">
+            <div class="cl_img">
+                <a href="#상세페이지">
+                    <img src="https://img1.daumcdn.net/thumb/R800x0/?scode=mtistory2&fname=https%3A%2F%2Ft1.daumcdn.net%2Fcfile%2Ftistory%2F24091E5058DBA97F21" alt="">
+                </a>
+            </div>
+            <div class="cl_profile">
+                <div class="pr_title"><a href="http://">우면산 하이킹</a></div>
+                <div class="pr_loca">서울/우면산</div>
+                <div class="pr_price">134,000원</div>
+                <div class="pr_star"><span style="color: #0981f1;">★</span> <span>8.9</span></div>
+            </div>
+        </div>
+        
+    </div>
+    
+    
+</body>
+
+</html>
