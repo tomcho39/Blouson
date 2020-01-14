@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>데이터 입/출력</title>
+        <script>
+            function start(){
+                // alert("웹 문서가 로드되었습니다.");
+            }
+        </script>
+
+        <style>
+            #area2{width: 300px; height: 100px; 
+                   border: 3px solid red;
+                   background: wheat;}
+
+            #area3{width: 300px; height: 100px;
+                   border: 3px solid red;
+                   background: lightsteelblue;}
+        </style>
+    </head>
+
+    <body onload="start();">
+        <h1>데이터 입/출력</h1>
+
+        <hr>
+
+        <script>
+            // document.write("document.write()를 통해" + "직접 내용을 작성하기");
+            // alert("문자열 데이터 출력 확인");
+        </script>
+
+        <h3>innerHTML을 활용한 요소 내용 변경확인하기</h3>
+
+        <div id="area1">
+            자바 스크립트에서 태그 엘리먼트(요소)의 값을 읽거나
+            안의 내용을 변경할 때 innerHTML 속성을 사용한다.
+        </div>
+
+        <br><br>
+        <button onclick="changeValue();">값 변경 확인하기</button>
+        <script>
+            function changeValue(){
+                // 자바라면
+                // int,char,double...
+                // JS : var / let
+
+                var divEl = document.getElementById('area1');
+                alert(divEl.innerHTML);
+                alert(divEl.innerText);
+                alert(divEl.id);
+
+                divEl.innerHTML = "innerHTML속성으로" + "내부 값 변경 확인!!";
+            }
+        </script>
+
+        <hr>
+
+        <h3>console.log() 함수 사용하기</h3>
+        <p>console.log()로 작성한 내용들을 개발자 도구를 통해서 확인할 수 있다.</p>
+
+        <button onclick="printConsole();">console.log() 사용하기</button>
+
+        <script>
+            function printConsole(){
+                console.log("콘솔 화면에 결과를 출력합니다.!!");
+            }
+        </script>
+
+        <hr>
+
+        <h3>window.confirm() 함수 사용하기</h3>
+        <p>
+            어떠한 질문에 대해서 "예/아니오"라는 "참/거짓"의 결과를 얻기 위한 함수<br>
+            "확인" : true <br>
+            "취소" : false
+        </p>
+
+        <br><br>
+
+        <button onclick="checkTest();">부먹/찍먹 구분하기</button>
+
+        <div id="area2"></div>
+
+        <script>
+            function checkTest(){
+                var result = window.confirm("당신은 부먹인가요?");
+                console.log("결과 : " + result);
+
+                var str;
+
+                if(result)
+                    str = "당신은 부먹이군요!";
+                else
+                    str = "당신은 찍먹이군요!";
+                
+                console.log("결과2 : " + str);
+
+                var divEl2 = document.getElementById('area2');
+                divEl2.innerHTML = str;
+            }
+        </script>
+
+        <hr>
+
+        <h3>window.prompt() 함수 사용하기</h3>
+        <p>prompt()함수는 텍스트 필드의 값을 입력받아 해당 값을 결과로 반환하는 함수</p>
+        <br>
+
+        <button onclick="testPrompt();">좋아하는 음식</button>
+
+        <div id="area3"></div>
+
+        <script>
+            function testPrompt(){
+                var result = window.prompt("좋아하는 음식은 무엇인가요?");
+
+                var divEl3 = document.getElementById('area3');
+                divEl3.innerHTML = "앗, 그럼" + result + "를 좋아하시는 군요!<br> 제가 사드릴 테니 카드만 주세요!" ; 
+            }
+        </script>
+
+        <br><br><br>
+        <br><br><br>
+        <br><br><br>
+
+        <a href="index.html">메인페이지로 돌아가기...</a>
+    </body>
+</html>
