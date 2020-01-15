@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>admin_classApply</title>
+
+    <!-- sidebar -->
+    <link rel="stylesheet" href="admin.css">
+
+    <!-- Responsive table -->
+    <link rel="stylesheet" href="admin_table.css">
+
+    <link rel="stylesheet" href="admin_modal.css">
+
+
+
+</head>
+
+<body>
+    <!-- Reposive Sidebar -->
+    <div class="sidebar">
+        <a class="index" href="admin.html">관리자 페이지</a>
+        <a href="admin.html">Dashboard</a>
+        <a class="active" href="admin_classApply.html">클래스 개설 신청</a>
+        <a href="admin_hostReport.html">호스트 신고</a>
+    </div>
+
+    <div class="content">
+        <h2>Class List</h2>
+        <div style="overflow-x:auto;">
+            <table>
+                <tr>
+                    <th>Class Name</th>
+                    <th>Host ID</th>
+                    <th>Type</th>       <!-- 동적/정적 -->
+                    <th>Location</th>
+                    <th>Main Category</th>
+                    <th>Capacity</th>   <!-- 인원 -->
+                    <th>Register Date</th>
+                    <th>Schedule</th>
+                    <th>Conform</th>   
+                    <th>Points</th>
+                    <th>Points</th>
+                    <th>Class ID</th>  <!-- 여기는 추후 승인되면 부여-->
+                </tr>
+                <tr>
+                    <td>Jill</td>
+                    <td>Smith</td>
+                    <td>50</td>
+                    <td>50</td>
+                    <td>50</td>
+                    <td>50</td>
+                    <td>50</td>
+                    <td>50</td>
+                    <td>
+                        <button id="myBtn">양식보기</button> <br>
+                        <button>승인</button>
+                        <button>반려</button>
+                    </td>
+                    <td>50</td>
+                    <td>50</td>
+                    <td>50</td>
+                </tr>
+                <tr>
+                    <td>Eve</td>
+                    <td>Jackson</td>
+                    <td>94</td>
+                    <td>94</td>
+                    <td>94</td>
+                    <td>94</td>
+                    <td>94</td>
+                    <td>94</td>
+                    <td>94</td>
+                    <td>94</td>
+                    <td>94</td>
+                    <td>94</td>
+                </tr>
+                <tr>
+                    <td>Adam</td>
+                    <td>Johnson</td>
+                    <td>67</td>
+                    <td>67</td>
+                    <td>67</td>
+                    <td>67</td>
+                    <td>67</td>
+                    <td>67</td>
+                    <td>67</td>
+                    <td>67</td>
+                    <td>67</td>
+                    <td>67</td>
+                </tr>
+            </table>
+        </div>
+    </div>
+
+    <!-- The Modal -->
+    <div id="myModal" class="modal">
+
+        <!-- Modal content -->
+        <div class="modal-content">
+        <span class="close">&times;</span>
+        <p>작성 양식 데이터 가져오기(호스트 마이페이지에서 가져옴)</p>
+        </div>
+    </div>
+
+    <!-- Fixed Footer -->
+    <div class="footer">
+        <p>Footer</p>
+    </div>
+</body>
+
+<script>
+    // Get the modal
+    var modal = document.getElementById("myModal");
+    
+    // Get the button that opens the modal
+    var btn = document.getElementById("myBtn");
+    
+    // Get the <span> element that closes the modal
+    var span = document.getElementsByClassName("close")[0];
+    
+    // When the user clicks the button, open the modal 
+    btn.onclick = function() {
+      modal.style.display = "block";
+    }
+    
+    // When the user clicks on <span> (x), close the modal
+    span.onclick = function() {
+      modal.style.display = "none";
+    }
+    
+    // When the user clicks anywhere outside of the modal, close it
+    window.onclick = function(event) {
+      if (event.target == modal) {
+        modal.style.display = "none";
+      }
+    }
+</script>
+
+</html>
