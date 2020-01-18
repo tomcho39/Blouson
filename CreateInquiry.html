@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>공지사항</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+<link rel="stylesheet" type="text/css" href="css/head.css"> 
+
+<style>
+
+    #div1{
+        height: 60px;
+        border: 1px solid black;
+        width: 100%;
+        margin : 0px;
+        background: rgb(9, 129, 241);
+    }
+
+    .sidenav a:hover, .dropdown-btn:hover {
+        color: #f1f1f1;
+    }
+
+    .sidenav {
+        height : 100%;
+        width: 200px;
+        position: fixed;
+        top: 60;
+        left: 0;
+        background-color: #111;
+        overflow-x: hidden;
+        padding-top: 20px;
+    }
+
+    .sidenav a, .dropdown-btn {
+        padding: 6px 8px 6px 16px;
+        text-decoration: none;
+        font-size: 20px;
+        color: #818181;
+        display: block;
+        border: none;
+        background: none;
+        width: 100%;
+        text-align: left;
+        cursor: pointer;
+        outline: none;
+    }
+
+   .main {
+        margin-left: 200px;
+        font-size: 12px;
+        padding: 0px 10px;
+    }
+    .div0{ padding: 15px 20px 15px 20px;
+            font-size: 20px;
+         } 
+
+    .div1{
+        color: rgb(155,155,155);
+    }
+
+    .dropdown-container {
+        display: none;
+        background-color: #262626;
+        padding-left: 8px;
+    }
+
+    .dropdown-container a{
+        font-size: 10pt;
+    }
+
+    .fa-caret-down {
+        float: right;
+        padding-right: 8px;
+    }
+
+    .text1{
+        font-weight: bold;
+        width: 200px;}
+
+    .join1,  .join2{
+        background-color: rgb(9, 129, 241);
+        width: 8%;
+        height: 30px;
+        color: white;
+        cursor : pointer;
+    }
+
+    </style>
+    </head>
+
+    <body>
+        <div class="top">
+            <label id="logo">
+                <a href="MainPage(Test).html"><img id="top-img" src="../Customer/image/LOGO1(50X297).png"/></a>
+            </label>
+    
+            <label id="login" class="top-nav">
+                로그인 |
+            </label>
+            <label id="signIn" class="top-nav">
+                <a href="SignIn.html">회원가입 |</a>
+            </label>&nbsp;&nbsp;&nbsp;
+            <label id="toHost" class="top-nav">
+                <a href="Host_SignIn.html">호스트신청 |</a>
+            </label>&nbsp;&nbsp;&nbsp;
+            <label id="customer" class="top-nav">
+                <a href="Inquiry.html">고객센터 |</a>
+            </label>&nbsp;&nbsp;&nbsp;
+            <label id="myPage" class="top-nav">
+                <a href="./MyPage/AccountPage.html">마이페이지 |</a>
+            </label>
+            <label id="AdminPage" class="top-nav">
+                <a href="./newbyAdmin/admin.html">관리자페이지 |</a>
+            </label>
+        </div>
+        <div id="div1"></div>
+        <div class="sidenav">
+            <div style="color: #818181; padding: 15px 18px 30px 18px; font-size: 25px; " align="center">문의 작성</div>
+            <a href="cus1.html">공지사항</a>
+            <button class="dropdown-btn">문의
+              <i class="fa fa-caret-down">≡</i>
+            </button>
+            <div class="dropdown-container">
+                <a href="Inquiry.html">문의 목록</a>
+                <a href="CreateInquiry.html">문의 작성</a>
+              </div>
+                <a href="Report.html">신고</a>
+              <a href="Refund.html">환불정책</a>
+        </div>
+
+
+        <div class="main">
+            <h1 style="padding-left: 50px; padding-top: 15px; text-align: center;">문의 작성</h1>
+            <hr>
+            <br>
+            
+
+        <form>
+            <h5 style="text-align: center;">문의제목
+                <input type="text">
+            </h5>
+    
+            <br><br>
+            <hr>
+    
+            <h5 style="text-align: center;">문의 내용 <br><br>
+                <textarea rows="20" cols="80" style="resize: none; font-size: 15pt;"></textarea>
+            </h5>
+            <div style="text-align: center;">
+                <input class="join2" type="submit" value="보내기">
+                <input class="join1" type="reset" value="취소">
+            </div>
+
+        </form>
+
+        <script>
+            var dropdown = document.getElementsByClassName("dropdown-btn");
+            var i;
+  
+        for (i = 0; i < dropdown.length; i++) {
+            dropdown[i].addEventListener("click", function() {
+            this.classList.toggle("active");
+            var dropdownContent = this.nextElementSibling;
+                if (dropdownContent.style.display === "block") {
+                    dropdownContent.style.display = "none";
+                } else {
+                    dropdownContent.style.display = "block";
+                }
+                
+                });
+        }     
+        </script>
+    </body>
+</html> 
