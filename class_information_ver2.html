@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <link href="https://fonts.googleapis.com/css?family=Nanum+Gothic|Noto+Sans+KR&display=swap" rel="stylesheet">
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+</head>
+<style>
+    *{
+         margin-top: 0px;
+         margin-bottom: 0px;
+       }
+ 
+       body,
+       .footer{
+         margin-left: 15%;
+         margin-right: 15%;
+       }
+ 
+  .top-nav{
+             float: right;
+             cursor: pointer;
+         }
+ 
+ #mainLogo{
+           margin-left: 35px;
+         }
+ </style>
+<style>
+    .wrap{
+        width: 70%;
+        margin: 0% 15% 0% 15%;
+        background: #fff
+        font-family: 'Noto Sans KR', sans-serif;
+        padding: 50px 10px 50px 10px;
+    }
+    .main{
+        display: inline-block;
+    }
+    .class_img{
+        background: #000;
+        width: 840px;
+        height: 540px;
+    }
+    .class_navi{
+        width: 95%;
+        padding: 20px 0px 20px 0px;
+        background: #fff;
+        border-bottom: 1px solid #e1e2e3;
+    }
+    .class_navi .navi_bar{
+        text-decoration: none;
+        font-size: 2rem;
+        padding: 0px 30px 0px 30px;
+        display: inline-block;
+        width: 15%;
+        text-align: center;
+        left: 20px;
+        color: rgb(109, 114, 112);      
+        font-family: 'Noto Sans KR', sans-serif;      
+    }
+    .host_detail{
+        width: 95%;
+        float: left;
+        background: #fff;
+        display: block;
+        padding: 30px;
+        border-bottom: 1px solid #e1e2e3;
+    }
+    .host_detail_title{
+        padding: 10px 0px 10px 20px;
+    }
+    .class_detail{
+        width: 95%;
+        float: left;
+        background: #fff;
+        display: block;
+        padding: 30px;
+        border-bottom: 1px solid #e1e2e3;
+    }.class_detail_title{
+        padding: 10px 0px 10px 20px;
+    }
+    .side{
+        width: 300px;
+        float: right;
+        background: #fff;
+        left: 70%;
+        top: 20%;
+        position: fixed;
+        border: 1px solid #e1e2e3;
+        border-radius: 3px;
+    }
+    #pay_btn{
+            font-size: 30px;
+        }
+    #pay_a{
+        text-decoration: none;
+        color: white;
+        background: #ff005a;
+        position: relative;
+        display: block;
+        text-align: center;
+        border-radius: 2px;
+        padding: 10px 10px 10px 10px;
+        font-family: 'Noto Sans KR', sans-serif;
+    }
+    .side .class_price{
+        padding-top: 20px;
+        padding-bottom: 20px;
+        margin: 0px 10px 0px 10px;
+    }
+    .side .price{
+        text-align: center;
+        padding: 10px 0px 10px 0px;
+    }
+    #text_time{
+        font-size: 20px;
+    }
+    #text_total{
+        font-size: 18px;
+    }
+    #side_pay_option{
+        height: 150px;
+    }
+    #side_class_title{
+        font-weight: bolder;
+        font-size: larger;
+        margin: 0px 0px 10px 0px;
+    }
+</style>
+<body>
+    <!-- header -->
+    <div>
+        <div class="top-navigatorBar">
+            <img src="./resources/images/NewbyLogo.png" alt="메인로고" id="mainLogo" width="60px" height="60px">
+    
+            <label id="login" class="top-nav">
+                <a>로그인 |</a>
+            </label>
+            <label id="signIn" class="top-nav">
+                <a>회원가입 |</a>
+            </label>
+            <label id="toHost" class="top-nav">
+                <a href="Host_SignIn.html">호스트신청 |</a>
+            </label>&nbsp;&nbsp;&nbsp;
+            <label id="customer" class="top-nav">
+                <a href="Inquiry.html">고객센터 |</a>
+            </label>&nbsp;&nbsp;&nbsp;
+            <label id="myPage" class="top-nav">
+                <a href="./MyPage/AccountPage.html">마이페이지 |</a>
+            </label>
+            <label id="AdminPage" class="top-nav">
+                <a href="./newbyAdmin/admin.html">관리자페이지 |</a>
+            </label>
+            
+    </div>
+    </div>
+    <!-- body -->
+    <div class="wrap">
+        <div class="main">
+            <div class="class_img">
+                <img src="C:\Users\pioha\Desktop\KH\Project\semi_project\images\class_example.jpg" class="class_img" alt="">
+
+            </div>
+            <div class="class_navi">
+                    <a href="#sumary" id="summary_nav" class="navi_bar">요약</a>
+                    <a href="#host_detail" id="host_nav" class="navi_bar">강사</a>
+                    <a href="#class_detail" id="class_nav" class="navi_bar">수업소개</a>
+                    <a href="#review" id="review_nav" class="navi_bar">리뷰</a>
+            </div>
+            <!-- 호스트 프로필 요약 -->
+            <div class="host_profile">
+                <div>
+                    <div><!--프로필 사진 영역 -->
+                        <div></div><!-- 호스트 아이디 -->
+                    </div>
+                    <div>
+                        <div><!-- 클래스 제목 -->
+
+                        </div>
+                        <div></div><!-- 별점 -->
+                        <div></div><!-- 이미지 아이콘 -->
+                    </div>
+                </div>
+            </div>
+            <!-- 강사 소개 -->
+            <div class="host_detail" id="host_detail">
+                <div class="host_detail_title"><h1>강사 소개</h1></div>
+                    <div>
+                        현) 퍼스널컬러컨설턴트
+                        <br> 현) 이미지메이킹 강사
+                        <br> 현) 리움스피치 강남 승무원학원 강사
+                        <br>
+                        <br> 전) 대한항공 국제선 승무원
+                        <br>
+                        <br> 그 외 다수 기업, 대학교 직무박람회/직업체험강의/컨설팅 진행
+                        <br>
+                        <br> ▣ 자격보유 ▣
+                        <br>
+                        <br> - ★일본 국제 퍼스널컬러 자격증 (NPO)★
+                        <br> - 이미지메이킹강사 1급
+                        <br> - 서비스강사 1급
+                        <br> - 서비스매니저 1급
+                        <br> - 서비스능력개발 지도사
+                        <br> - 레크리에이션 지도사..
+                        <br>
+                        <br>
+                        <br> ✔ Be My Color!
+                        <br>
+                        <br> 이미지 경쟁시대!
+                        <br> 나를 브랜딩하라!
+                        <br> 매력이 자본이다!
+                        <br>
+                        <br> 첫인상의 중요성에 관한 이야기들은 한번쯤은 들어보셨을 거예요.
+                        <br>
+                        <br> 저는 예비 승무원 시절,
+                        <br> 그리고 항공사에 근무하면서
+                        <br>
+                        <br> 서비스 직으로 활동하며, '이미지'의 중요성을 느끼고
+                        <br>
+                        <br> 어떻게 하면 상대방에게
+                        <br> 좋은 '이미지'를 전달할 수 있을지에 대해 그 누구보다 열심히 고민해왔어요!
+                        <br>
+                        <br> 반짝★ 유행하는 패션이나 비싼명품을 걸치는 것만으로는
+                        <br> 여러분의 '매력'을 빛내기 쉽지 않습니다.
+                        <br>
+                        <br>
+                        <br> ✔ Find My Color
+                        <br>
+                        <br> 사람들이 가지고 있는 요소는 다양하고,
+                        <br> 어울리는 색감과 스타일은 다 다릅니다!
+                        <br>
+                        <br> 여러분은 세상에 단 하나밖에 없는 브랜드이고,
+                        <br>
+                        <br> 컬러로 여러분의 '매력'을 끌어내는것이
+                        <br> 컨설턴트인 제가 가장 자신있게 도와드릴 수 있는 부분이에요~
+                        <br>
+                        <br> 이제 이 글을 읽는 당신도!
+                        <br> 퍼스널컬러로 '자신감'과 '매력'을 찾아보세요 :)
+                        <br>
+                        <br>
+                    </div>
+            </div>
+            <!--/강사 소개 -->
+            <!-- 수업 소개 -->
+            <div class="class_detail" id="class_detail">
+                <div class="class_detail_title">
+                    <h1>수업소개</h1></div>
+                    <div>
+                        현재 기준금리 1.25%, 시중 적금금리 2.0%, 예금금리 1.5%
+                            <br>
+                            <br> 벌써부터 머리 아프신가요?
+                            <br> 기사에서는 자꾸 금리가 내려간다는데, 적금 이자가 어떻고 대출 금리가 어떻고...
+                            <br>
+                            <br> 많은 분들이 분명 저축을 '하고' 계십니다.
+                            <br> 그러나 '잘 하고' 계시나요?
+                            <br>
+                            <br> 적금, 예금, ISA, CMA, 주식, 펀드, ETF, ELS, Wrap Account, 연금저축, 저축보험, 연금보험, 변액보험...
+                            <br>
+                            <br> 단순 이자율만 신경쓰고 저축을 하기엔 세상에는 너무나 많은 금융상품이 존재합니다.
+                            <br> 그러나 우리는 적금, 예금마저도 신경쓰기 벅차하고 더 알아볼 생각도 하지 않습니다.
+                            <br>
+                            <br> 내 일 하기도 바쁜데
+                            <br> 증권사? 보험사? 어디있는지도 모르겠고, 퇴근 후에는 너무 늦고..
+                            <br>
+                            <br> 다양한 금융상품들을 쉽게 접할 수 없기 때문에, 시간이 없기 때문에, 너무 어렵기 때문에
+                            <br> 우리는 많은 기회를 놓치고 있습니다.
+                            <br>
+                            <br>
+                            <br> 내가 앞으로 천천히 걸어갈 때 누군가 뛰어간다면 결국 뒤쳐지게 됩니다.
+                            <br>
+                            <br>
+                            <br> 이 한 번의 수업을 통해 내가 어떠한 방향으로 나아가야 하는지, 나에게 맞는 속도는 어떠한지 알아보는 유익한 시간을 가지실 수 있습니다.
+                            <br>
+                            <br> 미룰수록 숙제는 눈덩이 처럼 불어나기에 지금 이 순간 여러분의 시작점에 도움이 되어드리고 싶습니다.
+                            <br>
+                            <br>
+                    </div>
+                </div>
+                    <div class="class_detail">
+                        <div>
+                            <h1>수업대상</h1>
+                        </div>
+                        <div>
+                            <ul class="d_info03">
+                                <li>
+                                    <p>1. 지금 버는 돈을 어떻게 저축해야 할 지 모르겠는 분
+                                    <br>
+                                    <br> 2. 무작정 적금만 하고 계신 분
+                                    <br>
+                                    <br> 3. 투자를 시작하고 싶은데 주식?펀드? ETF? 어떻게 시작하고 어떻게 관리해야 할 지 모르시는 분
+                                    <br>
+                                    <br> 4. 자신의 저축 상황을 점검 받아보고 싶으신 분
+                                    <br>
+                                    <br> 5. 소비패턴을 확인하고 제대로 소비관리를 해보고 싶으신 분</p>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="class_detail">
+                        <div>
+                            <h1>커리큘럼</h1>
+                        </div>
+                        <div>
+                            <dl class="step_cont">
+                                <dd>
+                                    원데이 클래스는 책정 가격과 별도로 보통 2-3시간 진행되게 됩니다.
+                                    <br> 이후 수업 진행 상황에 따라 추가 수업이 필요한 경우 강사와 협의 후 무료로 진행 됩니다.
+                                    <br>
+                                    <br>
+                                    <br> Index.
+                                    <br>
+                                    <br>
+                                    <br> 1. 시대의 흐름에 따른 저축 트랜드의 변화
+                                    <br> - 금리의 변화는 어떠한 저축 트랜드를 만들어 왔는가?
+                                    <br>
+                                    <br> 2. 돈을 체계적으로 모으기 위한 요소들
+                                    <br> - 쓰고 남은 돈 모으는 것이 저축이 아니다.
+                                    <br>
+                                    <br> 3. 현재 우리 시대에 필요한 저축 방식
+                                    <br> - 기준금리 1.25%, 우리가 나아가야 할 길은?
+                                    <br>
+                                    <br> 4. 똑똑하게 소비하는 방법
+                                    <br> - [번 돈 - 쓴 돈 = 저축할 돈] 그럼 어떻게 소비해야하지?
+                                    <br>
+                                    <br> 5. 금융상품 총론
+                                    <br> - 적금? CMA? 주식? 펀드? ETF? ELS? 연금보험? 변액보험?
+                                    <br>
+                                    <br> 6. 전문가와 함께 만드는 나만의 포트폴리오
+                                    <br> - 남들과 쓰는게 다른데, 똑같이 저축한다고 될까? </dd>
+                                <dd class="cimg">
+                                </dd>
+                            </dl>
+                        </div>
+                    </div>
+        </div>
+    </div>
+    <!-- side bar -->
+    <div class="side">
+        <div class="class_price">
+            <div class="">
+                <div class="title" id="side_class_title">
+                    원데이 클래스</div>
+
+                    <div id="side_pay_option">수업 옵션 및 내용</div>
+                    <div class="payment">
+                        <a id="pay_a" href="" onclick="$('popup-login).show()'"><span id="pay_btn">수업 신청하기</span></a>
+                    </div>
+                    <div class="price">
+                        <div id="text_time"><b>\20,000원 / 시간</b></div>
+                        <div id="text_total">\40,000 / 총 *회 *시간</div>
+                    </div>
+            </div>
+        </div>
+    </div>
+    <!-- footer -->
+    <div>
+        <div class="footer">
+            <div class="container">
+              <p class="m-0 text-center text-white">Copyright &copy; Your Website 2020</p>
+            </div>
+    </div>
+</body>
+</html>
