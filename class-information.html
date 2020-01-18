@@ -3,17 +3,64 @@
 <head>
     <meta charset="UTF-8">
     <title>class information</title>
+    <link href="https://fonts.googleapis.com/css?family=Nanum+Gothic&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Nanum+Gothic|Noto+Sans+KR&display=swap" rel="stylesheet">
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <!-- <style>
+        *{
+          margin: 0;
+          padding: 0;
+        }
+  
+        html, body{
+          height: 100%;
+  
+        }
+          .top{ 
+              position: fixed;
+              width:100%;
+              height: 60px;
+              margin: 0px;
+              color: white;
+              background: #0981F1;
+              
+          }
+  
+          .top-nav{
+              float: right;
+              cursor: pointer;
+          }
+  
+          .footer{
+              position: absolute;
+              float: bottom;
+              left: 0;
+              bottom: 0;
+              width: 100%;
+              padding: 15px 0;
+  
+              text-align: center;
+  
+              color: white;
+  
+              background: #0981F1;
+          }
+      </style> -->
     <style>
         .wrap{
             width: 100%;
             background: #e3e3e3;
             padding: 50px 0 50px 0;
             position: absolute;
+            top: 80px;
+
+            font-family: 'Noto Sans KR', sans-serif;
+            margin: 0% 10% 0% 10%;
         }
         .main{
-            margin-right: 250px;
-            left: 80px;
-            position: relative;
+            /* margin-right: 250px; */
+            /* left: 80px; */
+            /* position: relative; */
         }
         .class_img{
             background: #000;
@@ -22,7 +69,7 @@
             height: 540px;
             background-size: cover;
             background-position: center;
-            background-image: url()
+            /* background-image: url() */
         }
         /* .class-price{
             position: relative;
@@ -34,23 +81,35 @@
             padding: 20px 20px 10px 20px;
         } */
         .side{
-            width: 250px;
+            width: 300px;
             float: right;
             background: #fff;
             /* position: absolute; */
             left: 970px;
             top: 100px;
             position: fixed;
-            border: 1px solid black;
+            padding: 10px 0px 10px 0px;
+            font-family: 'Noto Sans KR', sans-serif;
+            
         }
         .class_navi{
             width: 840px;
+            padding: 20px 0px 20px 0px;
             background: #fff;
-            color: #000;
+        }
+        .class_navi .navi_bar{
+            text-decoration: none;
+            font-size: 2rem;
+            font-family: 'Nanum Gothic', sans-serif;
+            padding: 0px 30px 0px 30px;
+            display: inline-block;
+            width: 15%;
+            text-align: center;
             position: relative;
-            top: -15px;
-            list-style: none;
-            padding-left: 0px;
+            left: 20px;
+            color: rgb(109, 114, 112);      
+            font-family: 'Noto Sans KR', sans-serif;      
+
         }
         .nav_item{
             width: 160px;
@@ -63,7 +122,6 @@
             float: left;
             background: #fff;
             position: relative;
-            top: -30px;
             border-top: 1px solid #e3e3e3;
             padding: 0 80px 0 80px;
         }
@@ -72,33 +130,107 @@
             float: left;
             background: #fff;
             position: relative;
-            top: -30px;
             padding: 0 80px 0 80px;
             border-top: 1px solid #e3e3e3;
+        }
+        #pay_btn{
+            font-size: 30px;
+        }
+        #pay_a{
+            text-decoration: none;
+            color: white;
+            background: #ff005a;
+            position: relative;
+            display: block;
+            text-align: center;
+            border-radius: 2px;
+            padding: 10px 10px 10px 10px;
+            font-family: 'Noto Sans KR', sans-serif;
+        }
+        .side .class_price{
+            padding-top: 20px;
+            padding-bottom: 20px;
+            margin: 0px 10px 0px 10px;
+        }
+        .side .price{
+            text-align: center;
+            padding: 10px 0px 10px 0px;
+        }
+        #text_time{
+            font-size: 20px;
+        }
+        #text_total{
+            font-size: 18px;
+        }
+        #side_pay_option{
+            height: 150px;
+        }
+        #side_class_title{
+            font-weight: bolder;
+            font-size: larger;
+            margin: 0px 0px 10px 0px;
         }
     </style>
 </head>
 <body>
     <!-- header -->
     <div>
-        
+        <div class="top">
+            <label id="logo">
+                <a href="MainPage(Test).html">Newby</a>
+            </label>
+    
+            <label id="login" class="top-nav">
+                로그인 |
+            </label>
+            <label id="signIn" class="top-nav">
+                <a href="SignIn.html">회원가입 |</a>
+            </label>&nbsp;&nbsp;&nbsp;
+            <label id="toHost" class="top-nav">
+                <a href="Host_SignIn.html">호스트신청 |</a>
+            </label>&nbsp;&nbsp;&nbsp;
+            <label id="customer" class="top-nav">
+                <a href="Inquiry.html">고객센터 |</a>
+            </label>&nbsp;&nbsp;&nbsp;
+            <label id="myPage" class="top-nav">
+                <a href="./MyPage/AccountPage.html">마이페이지 |</a>
+            </label>
+            <label id="AdminPage" class="top-nav">
+                <a href="./newbyAdmin/admin.html">관리자페이지 |</a>
+            </label>
+            
+        </div>
     </div>
     <!-- body -->
     <div class="wrap">
         <div class="main">
             <div class="class_img">
+                <img src="C:\Users\pioha\Desktop\KH\Project\semi_project\images\class_example.jpg" class="class_img" alt="">
 
             </div>
             <div class="class_navi">
-                <ul>
-                    <li><a href="#sumary" id="sli" class="on">요약</a></li>
-                    <li><a href="#tutorinfo" id="tli" class="">강사</a></li>
-                    <li><a href="#Introduction" id="ili" class="">수업소개</a></li>
-                    <li><a href="#review" id="rli" class="">리뷰</a></li>
-                </ul>
+                    <a href="#sumary" id="summary_nav" class="navi_bar">요약</a>
+                    <a href="#host_detail" id="host_nav" class="navi_bar">강사</a>
+                    <a href="#class_detail" id="class_nav" class="navi_bar">수업소개</a>
+                    <a href="#review" id="review_nav" class="navi_bar">리뷰</a>
+            </div>
+            <!-- 호스트 프로필 요약 -->
+            <div class="host_profile">
+                <div>
+                    <div><!--프로필 사진 영역 -->
+                        <div></div><!-- 호스트 아이디 -->
+                    </div>
+                    <div>
+                        <div><!-- 클래스 제목 -->
+
+                        </div>
+                        <div></div><!-- 별점 -->
+                        <div></div><!-- 이미지 아이콘 -->
+                    </div>
+                </div>
             </div>
             <!-- 강사 소개 -->
-            <div class="host_detail">
+            <div class="host_detail" id="host_detail">
                 <div class="host_detail_title"><h1>강사 소개</h1></div>
                     <div>
                         현) 퍼스널컬러컨설턴트
@@ -157,7 +289,7 @@
             </div>
             <!--/강사 소개 -->
             <!-- 수업 소개 -->
-            <div class="class_detail">
+            <div class="class_detail" id="class_detail">
                 <div class="class_detail_title">
                     <h1>수업소개</h1></div>
                     <div>
@@ -251,25 +383,28 @@
     </div>
     <!-- side bar -->
     <div class="side">
-        <div class="class-price">
+        <div class="class_price">
             <div class="">
-                <div class="title">
+                <div class="title" id="side_class_title">
                     원데이 클래스</div>
 
-                    <div>수업 옵션 및 내용</div>
+                    <div id="side_pay_option">수업 옵션 및 내용</div>
                     <div class="payment">
-                        <a href="" onclick="$('popup-login).show()'"><span>수업 신청하기</span></a>
+                        <a id="pay_a" href="" onclick="$('popup-login).show()'"><span id="pay_btn">수업 신청하기</span></a>
                     </div>
                     <div class="price">
-                        <div><b>\20,000원 / 시간</b></div>
-                        <div>\40,000 / 총 *회 *시간</div>
+                        <div id="text_time"><b>\20,000원 / 시간</b></div>
+                        <div id="text_total">\40,000 / 총 *회 *시간</div>
                     </div>
             </div>
         </div>
     </div>
     <!-- footer -->
     <div>
-
+        <div class="footer">
+            <div class="container">
+              <p class="m-0 text-center text-white">Copyright &copy; Your Website 2020</p>
+            </div>
     </div>
 
     
