@@ -12,29 +12,55 @@
     *{
          margin-top: 0px;
          margin-bottom: 0px;
+         font-family: 'Noto Sans KR', sans-serif;
        }
  
-       body,
-       .footer{
-         margin-left: 15%;
-         margin-right: 15%;
-       }
+    body,
+    .footer{
+        margin-left: 15%;
+        margin-right: 15%;
+    }
  
-  .top-nav{
-             float: right;
-             cursor: pointer;
-         }
- 
- #mainLogo{
-           margin-left: 35px;
-         }
+    .main_navi{
+        float: right;
+        cursor: pointer;
+        display: flex;
+        line-height: 60px;
+        font-size: 18px;
+        position: relative;
+        right: 1%;
+    }
+    .main_navi span{
+        color: rgba(221, 221, 221, 0.5);
+        padding-left: 15px;
+    }
+    
+    #mainLogo{
+        margin-left: 35px;
+    }
+    #newby_logo{
+        padding: 1%;
+        margin-bottom: 2px;
+    }
+    .footer{
+        height: 60px;
+        line-height: 60px;
+        width: 100%;
+        background:#0981F1;
+        position: relative;
+        left: -15%;
+        font-size: 14px;
+        margin-top: 10px;
+    }
+    .footer p{
+        padding-left: 5%;
+    }
  </style>
 <style>
     .wrap{
         width: 70%;
         /* margin: 0% 15% 0% 15%; */
         background: #fff
-        font-family: 'Noto Sans KR', sans-serif;
         padding: 50px 10px 50px 10px;
     }
     .main{
@@ -55,7 +81,7 @@
         font-size: 2rem;
         padding: 0px 30px 0px 30px;
         display: inline-block;
-        width: 15%;
+        width: 17%;
         text-align: center;
         left: 20px;
         color: rgb(109, 114, 112);      
@@ -66,7 +92,7 @@
         float: left;
         background: #fff;
         display: block;
-        padding: 30px;
+        padding: 22px;
         border-bottom: 1px solid #e1e2e3;
         border-top: 1px solid #e1e2e3;
     }
@@ -78,7 +104,7 @@
         float: left;
         background: #fff;
         display: block;
-        padding: 30px;
+        padding: 22px;
         border-bottom: 1px solid #e1e2e3;
     }.class_detail_title{
         padding: 10px 0px 10px 20px;
@@ -132,6 +158,11 @@
         font-weight: bolder;
         font-size: larger;
         margin: 0px 0px 10px 0px;
+    }
+    #side_pay_option{
+        font-size: 14px;
+        padding: 13px 0;
+        border-bottom: 1px solid #ddd;
     }
     .review_box img{
         width: 41px;
@@ -203,33 +234,34 @@
         padding: 5px 10px 5px 10px;
         color: #999;
     }
-    /* .paging_num ul li{
-        list-style: none;
-    } */
+    #review{
+        border-bottom: #fff;
+    }
 </style>
 <body>
     <!-- header -->
         <div class="top-navigatorBar">
-            <img src="./resources/images/NewbyLogo.png" alt="메인로고" id="mainLogo" width="60px" height="60px">
-    
+            <img src="./images/main_logo.png" alt="로고" id="newby-logo" width="120px" height="60px">
+            <div class="main_navi">
             <label id="login" class="top-nav">
-                <a>로그인 |</a>
+                <a>로그인 <span>|</span></a>
             </label>
             <label id="signIn" class="top-nav">
-                <a>회원가입 |</a>
+                <a>회원가입 <span>|</span></a>
             </label>
             <label id="toHost" class="top-nav">
-                <a href="Host_SignIn.html">호스트신청 |</a>
+                <a href="Host_SignIn.html">호스트신청 <span>|</span></a>
             </label>&nbsp;&nbsp;&nbsp;
             <label id="customer" class="top-nav">
-                <a href="Inquiry.html">고객센터 |</a>
+                <a href="Inquiry.html">고객센터 <span>|</span></a>
             </label>&nbsp;&nbsp;&nbsp;
             <label id="myPage" class="top-nav">
-                <a href="./MyPage/AccountPage.html">마이페이지 |</a>
+                <a href="./MyPage/AccountPage.html">마이페이지 <span>|</span></a>
             </label>
             <label id="AdminPage" class="top-nav">
-                <a href="./newbyAdmin/admin.html">관리자페이지 |</a>
+                <a href="./newbyAdmin/admin.html">관리자페이지</a>
             </label>
+            </div>
         </div>
     <!-- body -->
     <div class="wrap">
@@ -359,7 +391,7 @@
                         </div>
                         <div>
                             <ul class="class_detail_text">
-                                <li>
+                                <li style="list-style: none;">
                                     <p>1. 지금 버는 돈을 어떻게 저축해야 할 지 모르겠는 분
                                     <br>
                                     <br> 2. 무작정 적금만 하고 계신 분
@@ -559,23 +591,24 @@
                 <div class="title" id="side_class_title">
                     원데이 클래스</div>
 
-                    <div id="side_pay_option">수업 옵션 및 내용</div>
+                    <div id="side_pay_option">01.21(화)<span style="float: center; margin-left: 20%;">19:00~21:00</span>
+                    <div style="float: right; margin-right: 5%;">역삼</div>
+                    </div>
                     <div class="payment">
                         <a id="pay_a" href="" onclick="$('popup-login).show()'"><span id="pay_btn">수업 신청하기</span></a>
                     </div>
                     <div class="price">
                         <div id="text_time"><b>\20,000원 / 시간</b></div>
-                        <div id="text_total">\40,000 / 총 *회 *시간</div>
+                        <div id="text_total">\40,000 / 총 1회 2시간</div>
                     </div>
             </div>
         </div>
     </div>
     <!-- footer -->
-    <div>
         <div class="footer">
             <div class="container">
               <p class="m-0 text-center text-white">Copyright &copy; Your Website 2020</p>
             </div>
-    </div>
+        </div>
 </body>
 </html>
