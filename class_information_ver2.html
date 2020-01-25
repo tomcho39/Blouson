@@ -20,19 +20,27 @@
         margin-left: 15%;
         margin-right: 15%;
     }
+    .form_search fieldset{
+        border: 0 none;
+        font-size: 15px;
+        color: #000;
+        line-height: 180%;
+        font-weight: 400;
+    }
  
     .main_navi{
+        height: 80px;
         float: right;
         cursor: pointer;
         display: flex;
-        line-height: 60px;
+        line-height: 80px;
         font-size: 18px;
         position: relative;
         right: 1%;
     }
     .main_navi span{
         color: rgba(221, 221, 221, 0.5);
-        padding-left: 15px;
+        padding: 0px 15px;
     }
     
     #mainLogo{
@@ -243,6 +251,14 @@
     <!-- header -->
         <div class="top-navigatorBar">
             <img src="./images/main_logo.png" alt="로고" id="newby-logo" width="120px" height="60px">
+            <div class="header_search_area">
+                    <form class="form_search" action="" name="search">
+                        <fieldset>
+                            <input type="text" name="query" id="searchcss" autocomplete="off" placeholder="배우고 싶은 수업 또는 지역을 검색해보세요!" value="">
+                            <button class="" type="submit" onclick="searchQuery2();"><img class="" src="" alt="검색"></button>
+                        </fieldset>
+                    </form>
+            </div>
             <div class="main_navi">
             <label id="login" class="top-nav">
                 <a>로그인 <span>|</span></a>
